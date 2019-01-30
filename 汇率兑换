@@ -1,0 +1,11 @@
+# 汇率
+USD_VS_RMB = 6.77
+# 带单位的货币输入
+currency_str_value = input('请输入带单位的货币金额：')
+# 获取货币单位
+unit = currency_str_value[-3:]
+print(unit)
+# rmb_value = eval(currency_str_value)
+# print(rmb_value)
+# usd_value = rmb_value/USD_VS_RMB
+# print('美元（USD）的金额是：', usd_value)
