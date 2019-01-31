@@ -1,11 +1,30 @@
 # 汇率
 USD_VS_RMB = 6.77
 # 带单位的货币输入
-currency_str_value = input('请输入带单位的货币金额：')
+currency_str_value = input('请输入带单位的货币金额（退出请输入Q）：')
 # 获取货币单位
-unit = currency_str_value[-3:]
-print(unit)
-# rmb_value = eval(currency_str_value)
-# print(rmb_value)
-# usd_value = rmb_value/USD_VS_RMB
-# print('美元（USD）的金额是：', usd_value)
+
+i = 0
+while currency_str_value != 'Q':
+    i = i + 1
+    print('循环次数为：', i)
+    unit = currency_str_value[-3:]
+
+    if unit == 'CNY':
+        # 输入的是人民币
+         rmb_str_value = currency_str_value[:-3]
+         rmb_value = eval(rmb_str_value)
+         usd_value = rmb_value / USD_VS_RMB
+         print('美元（USD）的金额是：', usd_value)
+    elif unit == 'USD':
+        usd_str_value = currency_str_value[:-3]
+        usd_value = eval(usd_str_value)
+        rmb_value = usd_value * USD_VS_RMB
+        print('人民币(CNY)金额为：', rmb_value)
+    else:
+        print('改程序当前版本不支持该种货币')
+    print('***********************************')
+    # 带单位的货币输入
+    currency_str_value = input('请输入带单位的货币金额（退出请输入Q）：')
+
+print('程序已退出！')
