@@ -1,0 +1,49 @@
+"""
+作者：刘静
+功能：利用递归函数绘制分形树
+版本：1.0
+日期：02/02/2019
+新增功能：用迭代绘制重复图形
+"""
+
+import turtle
+
+def draw_branch(branch_length):
+    """
+    绘制分形树的函数
+
+    """
+    # 绘制右侧树枝
+    if branch_length >= 5:
+        turtle.forward(branch_length)
+        print('向前', branch_length)
+        turtle.right(20)
+        print('右转 20度')
+        draw_branch(branch_length-15)
+        # 绘制左侧树枝
+        turtle.left(40)
+        print('左转40')
+        draw_branch(branch_length - 15)
+        # 回到之前的位置
+        turtle.right(20)
+        turtle.backward(branch_length)
+        print('向后', branch_length)
+
+def main():
+    """
+        主函数
+
+    """
+    turtle.left(90)
+
+    turtle.penup()
+    turtle.backward(150)
+    turtle.pendown()
+    turtle.color('brown')
+    draw_branch(80)
+
+    turtle.exitonclick()
+
+
+if __name__ == '__main__':
+    main()
