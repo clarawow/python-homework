@@ -1,2 +1,2 @@
 # python-homework
-$ git commit -m "绘制分形树和五角星 "
+$ git commit -m "绘制五角星计算汇率"
